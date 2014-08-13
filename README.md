@@ -3,13 +3,18 @@ NOTE: This is a copy of source code which is available at http://code.google.com
 EveryBlock.com is an experimental news Web site that provides information at a "microlocal" level — by neighborhood or city block. It was funded by a grant from Knight Foundation, which requires the site's backend code to be open-sourced. Here is the code.
 
 Overview
+========
+
 In an effort to make the code useful to as many people as possible, we've split it into several packages:
 
-The main package (probably the thing you're looking for) is the publishing system, known as ebpub.
-Second, the packages ebdata and ebgeo contain Python modules for processing data and making maps.
-Third, the packages ebinternal and everyblock round out the code that powers EveryBlock.com. They're internal tools and are likely not of general use, but we're including them to be complete.
-Finally, ebblog and ebwiki are our blog and wiki software, respectively. Because, dammit, the world needs another Django-powered blogging tool.
+* The main package (probably the thing you're looking for) is the publishing system, known as ebpub.
+* Second, the packages ebdata and ebgeo contain Python modules for processing data and making maps.
+* Third, the packages ebinternal and everyblock round out the code that powers EveryBlock.com. They're internal tools and are likely not of general use, but we're including them to be complete.
+* Finally, ebblog and ebwiki are our blog and wiki software, respectively. Because, dammit, the world needs another Django-powered blogging tool.
+
 Things you should know
+======================
+
 We're excited to make this code available to you, but there are a few Important Things you should know about using it:
 
 TRADEMARKS — In using this code, you may not call your product "EveryBlock." Of course, we would love it if you said it's inspired by EveryBlock, uses EveryBlock's code, etc., but you can't call it EveryBlock.
@@ -21,33 +26,41 @@ DESIGN/UI — This code includes basic HTML templates, but the design ("look and
 LANGUAGES/FRAMEWORKS — This code is written in Python, using the Django Web framework. It requires PostgreSQL and PostGIS.
 
 Mailing list
+------------
 This code is being made available to you with no promise of support, but you might want to connect with other people using it on the ebcode mailing list.
 
 ebpub
+-----
 Publishing system that powers EveryBlock.com.
 
 Dependencies among packages: Requires ebgeo
 ebdata
+------
 Various data-acquisition modules and scripts.
 
 Dependencies among packages: Requires ebgeo, ebpub
 ebgeo
+-----
 Various geographic/mapping utilities used by ebpub but packaged for optional standalone use.
 
 Dependencies among packages: None
 ebinternal
+----------
 Code for internal EveryBlock tools. Likely not of general use.
 
 Dependencies among packages: Requires everyblock
 everyblock
+----------
 Python package of code that is specific to EveryBlock.com, as opposed to the generic ebpub system. Likely not of general use.
 
 Dependencies among packages: Requires ebgeo, ebpub, ebdata
 ebblog
+------
 A Django-powered blog system used by the EveryBlock Blog.
 
 Dependencies among packages: None
 ebwiki
+------
 A Django-powered wiki used internally by EveryBlock.
 
 Dependencies among packages: None
